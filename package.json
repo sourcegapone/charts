@@ -1,0 +1,94 @@
+{
+  "name": "@cyclonedx/cdxgen",
+  "version": "8.2.0",
+  "description": "Creates CycloneDX Software Bill-of-Materials (SBOM) from source or container image",
+  "homepage": "http://github.com/cyclonedx/cdxgen",
+  "author": "Prabhu Subramanian <prabhu@appthreat.com>",
+  "license": "Apache-2.0",
+  "keywords": [
+    "sbom",
+    "bom",
+    "inventory",
+    "spdx",
+    "package-url",
+    "purl",
+    "owasp",
+    "component",
+    "dependency",
+    "appsec",
+    "scrm"
+  ],
+  "contributors": [
+    {
+      "name": "Erlend Oftedal"
+    },
+    {
+      "name": "Steve Springett",
+      "email": "steve.springett@owasp.org",
+      "url": "https://about.me/stevespringett"
+    }
+  ],
+  "main": "index.js",
+  "bin": {
+    "cdxgen": "./bin/cdxgen"
+  },
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch",
+    "lint": "eslint index.js utils.js binary.js server.js docker.js bin/cdxgen",
+    "pretty": "prettier --write *.js bin/cdxgen --trailing-comma=none"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cyclonedx/cdxgen.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cyclonedx/cdxgen/issues"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.20.15",
+    "@babel/traverse": "^7.20.13",
+    "cheerio": "^1.0.0-rc.12",
+    "edn-data": "^1.0.0",
+    "glob": "^8.1.0",
+    "global-agent": "^3.0.0",
+    "got": "^11.8.5",
+    "js-yaml": "^4.1.0",
+    "jws": "^4.0.0",
+    "node-stream-zip": "^1.15.0",
+    "packageurl-js": "^1.0.0",
+    "parse-packagejson-name": "^1.0.1",
+    "prettify-xml": "^1.2.0",
+    "properties-reader": "^2.2.0",
+    "semver": "^7.3.8",
+    "ssri": "^8.0.1",
+    "table": "^6.8.1",
+    "tar": "^6.1.13",
+    "uuid": "^9.0.0",
+    "xml-js": "^1.6.11",
+    "xmlbuilder": "^15.1.1",
+    "yargs": "^17.6.2"
+  },
+  "optionalDependencies": {
+    "@cyclonedx/cdxgen-plugins-bin": "^1.0.5",
+    "connect": "^3.7.0",
+    "body-parser": "^1.20.1",
+    "compression": "^1.7.4"
+  },
+  "files": [
+    "*.js",
+    "bin/",
+    "spdx-licenses.json",
+    "lic-mapping.json",
+    "known-licenses.json",
+    "vendor-alias.json",
+    "queries.json"
+  ],
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "jest": "^26.6.3"
+  }
+}
